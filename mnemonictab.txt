@@ -1,0 +1,12 @@
+jmp 3
+stc 1
+nop 1
+adc 1
+mvi 2
+sbb 1
+sbi 2
+hlt 1
+lxi 3
+mov 4
+sta 3
+lda 3

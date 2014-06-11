@@ -1,0 +1,11 @@
+jmp 195 3
+stc 55 1
+nop 0 1
+adcb 136 1
+mvia 62 2
+mvib 6 2
+sbbb 152 1
+sbi 222 2
+hlt 118 1
+lxid 17 3
+lxih 33 3

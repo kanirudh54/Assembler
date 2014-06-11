@@ -1,0 +1,34 @@
+;Test add-with-carry instructions
+		jmp start
+
+;data
+;var2: equ 8
+var1: db 34,8
+var2: ds 2
+var3: equ 4 
+;code
+start:		nop
+
+		;Add with carry
+		lxi 	h, var1 ; This is a comment. 
+		mvi	a, 23h ; Should be ignored
+		mov	d, m
+		adc     d
+		
+		mvi	b, 46h
+		stc	
+		adc	b	;6A
+		;aci	46h
+
+		;Sub with carry
+		;mvi	a, var1
+		mvi	b, 3fh
+		stc
+		sbb 	b
+		
+		;SBI
+		mvi	a, 37h
+		stc
+		sbi	25h
+
+		hlt

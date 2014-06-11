@@ -1,0 +1,298 @@
+pdef movregnum regd, num
+mvi regd num
+end
+
+pdef movaccnum regd, num
+mvi regd num
+end
+
+pdef movregreg regd, regs
+mov regd regs
+end
+
+pdef movregacc regd, regs
+mov regd regs
+end
+
+pdef movaccreg regd, regs
+mov regd regs
+end
+
+pdef movaccacc regd, regs
+mov regd regs
+end
+
+pdef movregvar regd, vars
+lxi h vars
+mov regd m
+end
+
+pdef movaccvar regd, vars
+lxi h vars
+mov regd m
+end
+
+pdef movvarnum vard, num
+sta temp
+mvi a num
+sta vard
+lda temp
+end
+
+pdef movvarreg vard, regs
+sta temp
+mov A regs
+sta vard
+lda temp
+end
+
+pdef movvaracc vard, regs
+sta temp
+mov A regs
+sta vard
+lda temp
+end
+
+pdef movvarvar vard, vars
+sta temp
+lxi h vars
+mov A m
+sta vard
+lda temp
+end
+
+pdef addregnum regd, num
+sta temp
+mvi A 0
+add regd
+adi num
+mov regd A
+lda temp
+end
+
+pdef addregreg regd, regs
+sta temp
+mvi A 0
+add regd
+add regs
+mov regd A
+lda temp
+end
+
+pdef addregacc regd, regs
+sta temp
+mvi A 0
+add regd
+add regs
+mov regd A
+lda temp
+end
+
+
+pdef addregvar regd, vars
+sta temp
+mvi A 0
+add regd
+lxi h vars
+add m
+mov regd A
+lda temp
+end
+
+pdef addaccnum regd, num
+adi num
+end
+
+pdef addaccreg regd, regs
+add regs
+end
+
+pdef addaccvar regd, vars
+lxi h vars
+add m
+end
+
+pdef addvarnum vard, num
+sta temp
+mvi A 0
+lxi h vard
+add m
+adi num
+sta vard
+lda temp
+end
+
+pdef addvarreg vard, regs
+sta temp
+mvi A 0
+lxi h vard
+add m
+add regs
+sta vard
+lda temp
+end
+
+pdef addvaracc vard, regs
+sta temp
+mvi A 0
+lxi h vard
+add m
+add regs
+sta vard
+lda temp
+end
+
+
+pdef addvarvar vard, vars
+sta temp
+mvi A 0
+lxi h vard
+add m
+lxi h vars
+add m
+sta vard
+lda temp
+end
+
+pdef subregnum regd, num
+sta temp
+mvi A 0
+add regd
+sui num
+mov regd A
+lda temp
+end
+
+pdef subregreg regd, regs
+sta temp
+mvi A 0
+add regd
+sub regs
+mov regd A
+lda temp
+end
+
+pdef subregacc regd, regs
+sta temp
+mvi A 0
+add regd
+sub regs
+mov regd A
+lda temp
+end
+
+
+pdef subregvar regd, vars
+sta temp
+mvi A 0
+add regd
+lxi h vars
+sub m
+mov regd A
+lda temp
+end
+
+pdef subaccnum regd, num
+sui num
+end
+
+pdef subaccreg regd, regs
+sub regs
+end
+
+pdef subaccvars regd, vars
+lxi h vars
+sub m
+end
+
+pdef subvarnum vard, num
+sta temp
+mvi A 0
+lxi h vard
+add m
+sui num
+sta vard
+lda temp
+end
+
+pdef subvarreg vard, regs
+sta temp
+mvi A 0
+lxi h vard
+add m
+sub regs
+sta vard
+lda temp
+end
+
+pdef subvaracc vard, regs
+sta temp
+mvi A 0
+lxi h vard
+add m
+sub regs
+sta vard
+lda temp
+end
+
+
+pdef subvarvar vard, vars
+sta temp
+mvi A 0
+lxi h vard
+add m
+lxi h vars
+sub m
+sta vard
+lda temp
+end
+
+pdef swapregreg regd, regs
+sta temp
+mov A regs
+mov regs regd
+mov regd A
+lda temp
+end
+
+pdef swapregacc regd, regs
+sta temp
+mov A regd
+lxi h temp
+mov regd m
+end
+
+pdef swapaccreg regd, regs
+sta temp
+mov A regd
+lxi h temp
+mov regd m
+end
+
+pdef swapregvar regd, vars
+sta temp
+mov A regd
+lxi h vars
+mov regd m
+sta vars
+lda temp
+end
+
+pdef swapvarreg vard, regs
+sta temp
+mov A regs
+lxi h vard
+mov regs m
+sta vard
+lda temp
+end
+
+pdef swapaccvar regd, vars
+sta temp
+lda vars
+
+lxi h vars
+mov regd m
+sta vars
+lda temp
+end

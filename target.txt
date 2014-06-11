@@ -1,0 +1,44 @@
+jmp 8
+
+db 10, 2
+ds 3
+lxi h, x
+mov A, m
+lxi h, y
+mov B, m
+sta 30
+mvi A, 0
+add C
+add B
+mov C, A
+lda 30
+nop
+mvi A, 20
+lxi h, 3
+mov B, m
+sta 30
+mvi A, 0
+lxi h, 3
+add m
+lxi h, 3+1
+sub m
+sta 3
+lda 30
+add b
+sta 30
+lxi h, 3
+mov A, m
+sta 5+2
+lda 30
+lxi h, 3
+mov A, m
+lxi h, 3
+mov B, m
+sta 30
+mvi A, 0
+add C
+add B
+mov C, A
+lda 30
+hlt
+db 0
